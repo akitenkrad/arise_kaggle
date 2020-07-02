@@ -1,0 +1,11 @@
+version: '3'
+services:
+  slack-bot:
+    container_name: 'slack_bot'
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+    volumes:
+      - ./src/:/workspace
+    command: python /workspace/slack_bot.py
+
